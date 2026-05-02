@@ -1,0 +1,101 @@
+# ═══════════════════════════════════════════
+#   STARSHIP - Catppuccin Gentoo Optimized
+# ═══════════════════════════════════════════
+
+format = """
+[╭─](bold #6c7086)\
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$cmd_duration\
+$time\
+[─╮](bold #6c7086)
+[╰─](bold #6c7086)\
+$status\
+$character"""
+
+add_newline = true
+
+# ── OS ─────────────────────────────────────
+[os]
+disabled = false
+style = "bold #cba6f7"
+
+[os.symbols]
+Gentoo = " "
+
+# ── USER ───────────────────────────────────
+[username]
+show_always = true
+style_user = "bold #89b4fa"
+style_root = "bold #f38ba8"
+format = "[ $user ]($style)"
+
+# ── HOST ───────────────────────────────────
+[hostname]
+ssh_only = false
+style = "bold #94e2d5"
+format = "[on $hostname ]($style)"
+
+# ── DIR ────────────────────────────────────
+[directory]
+style = "bold #cba6f7"
+format = "[in $path ]($style)"
+truncation_length = 3
+home_symbol = "~"
+
+# ── GIT ────────────────────────────────────
+[git_branch]
+symbol = " "
+style = "bold #f9e2af"
+format = "[on $branch ]($style)"
+
+[git_status]
+style = "bold #f38ba8"
+format = "([$all_status$ahead_behind]($style) )"
+
+# ── CMD TIME ───────────────────────────────
+[cmd_duration]
+min_time = 1500
+style = "bold #fab387"
+format = "[ 󱎫 $duration ]($style)"
+
+# ── TIME ───────────────────────────────────
+[time]
+disabled = false
+style = "bold #a6e3a1"
+format = "[ 󱑎 $time ]($style)"
+time_format = "%H:%M"
+
+# ── STATUS ─────────────────────────────────
+[status]
+disabled = false
+success_symbol = "[❯](bold #a6e3a1)"
+symbol = "[✗](bold #f38ba8)"
+format = "[$symbol ]($style)"
+
+# ── CHARACTER ──────────────────────────────
+[character]
+success_symbol = "[❯](bold #a6e3a1)"
+error_symbol   = "[❯](bold #f38ba8)"
+
+# ── FILL ───────────────────────────────────
+[fill]
+symbol = " "
+
+# ── LANG (lazy affichage) ──────────────────
+[python]
+symbol = " "
+style = "bold #f9e2af"
+
+[nodejs]
+symbol = " "
+style = "bold #a6e3a1"
+
+[rust]
+symbol = " "
+style = "bold #fab387"
