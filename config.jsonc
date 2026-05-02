@@ -1,0 +1,50 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "lenovo",
+        "padding": { "top": 2, "left": 2 },
+        "color": { "1": "magenta", "2": "blue" }
+    },
+    "display": { "separator": " ➔  " },
+    "modules": [
+        "title",
+        "separator",
+
+        // --- SECTION SOFTWARE (Rose/Magenta) ---
+        { "type": "custom", "format": "\u001b[1;35m󰟼 SOFTWARE" },
+        { "type": "os", "key": "  󰣨 OS      ", "keyColor": "35" },
+        { "type": "kernel", "key": "  󰒋 Kernel  ", "keyColor": "35" },
+        { "type": "wm", "key": "  󱂬 Gestion. ", "keyColor": "35" }, // Window Manager
+        { "type": "shell", "key": "  󱆃 Shell   ", "keyColor": "35" },
+        { "type": "terminal", "key": "  󱆃 Terminal", "keyColor": "35" },
+        { "type": "packages", "key": "  󰏖 Paquets ", "keyColor": "35" },
+
+        "break",
+
+        // --- SECTION HARDWARE (Cyan) ---
+        { "type": "custom", "format": "\u001b[1;36m󰓅 HARDWARE" },
+        { "type": "host", "key": "  󰌢 Machine ", "keyColor": "36" },
+        { "type": "bios", "key": "  󰘚 BIOS    ", "keyColor": "36" }, // Très ThinkPad
+        { "type": "cpu", "key": "  󰻠 CPU     ", "keyColor": "36" },
+        { "type": "gpu", "key": "  󰢮 GPU     ", "keyColor": "36" },
+        { "type": "memory", "key": "  󰑭 RAM     ", "keyColor": "36" },
+        { "type": "battery", "key": "  󰁹 Pile    ", "keyColor": "36" },
+        { "type": "display", "key": "  󰍹 Ecran   ", "keyColor": "36" },
+
+        "break",
+
+        // --- SECTION MISC (Bleu) ---
+        { "type": "custom", "format": "\u001b[1;34m󰠵 MISC" },
+        {
+            "type": "command",
+            "key": "  󰃭 Age     ",
+            "keyColor": "34",
+            "text": "birth=$(stat -c %W /); if [ \"$birth\" = \"0\" ]; then birth=$(stat -c %Y /etc/hostname); fi; now=$(date +%s); days=$(( ($now - $birth) / 86400 )); echo \"$days jours\""
+        },
+        { "type": "uptime", "key": "  󱎫 Uptime  ", "keyColor": "34" },
+        { "type": "datetime", "key": "  󰃭 Date    ", "keyColor": "34", "format": "{1}-{3}-{11}" },
+
+        "break",
+        { "type": "colors", "symbol": "circle" }
+    ]
+}
